@@ -2,9 +2,9 @@ import { useState, useRef } from "react";
 // My imports.
 import styles from "./GuestCheckout.module.css";
 import type User from "../../../models/User";
-import { isValidEmail, isValidName } from "utils/validation/input_validation";
 // My component.
 import CheckoutFormButtons from "./CheckoutFormButtons";
+import { isValidEmail, isValidName } from "src/utils/validation/input_validation";
 
 type GuestCheckoutProps = {
   onCancel: () => void;
