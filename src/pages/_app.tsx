@@ -6,7 +6,11 @@ import createEmotionCache from '../utils/createEmotionCache';
 import { LazyMotion } from "framer-motion";
 import HeadMeta from "../components/Layout/HeadMeta";
 import { SessionProvider } from 'next-auth/react';
-
+import { Provider } from 'react-redux';
+import store from "../store/index";
+import Layout from 'src/components/Layout/Layout';
+const loadFeatures = () =>
+    import("../utils/animations/features").then((res) => res.default);
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -14,18 +18,16 @@ const clientSideEmotionCache = createEmotionCache();
 export default function App({ Component, pageProps, emotionCache = clientSideEmotionCache }: any) {
     return (
         <>
-            <HeadMeta />
-        <CacheProvider value={emotionCache}>
+      <HeadMeta />
+      <Provider store={store}>
+        <LazyMotion features={loadFeatures} strict>
         <SessionProvider>
-
-            <ThemeProvider theme={theme}>
-                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-                <CssBaseline />
-                <Component {...pageProps} />
-                    </ThemeProvider>
-                </SessionProvider>
-
-            </CacheProvider>
+            <Layout>
+              <Component {...pageProps} />
+            </Layout>
+            </SessionProvider>
+        </LazyMotion>
+      </Provider>
         </>
     );
 }
