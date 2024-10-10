@@ -1,7 +1,7 @@
 import { m } from "framer-motion";
 // My imports.
 import styles from "./Backdrop.module.css";
-import { backdropAnimation } from "utils/animations/animation";
+import { backdropAnimation } from "src/utils/animations/animation";
 type BackdropProps = {
   onClose: () => void;
 };
