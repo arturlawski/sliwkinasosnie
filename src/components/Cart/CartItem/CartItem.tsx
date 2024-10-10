@@ -63,7 +63,7 @@ function CartItem(props: CartItemProps) {
           </span>
         </button>
         <button onClick={removeItemFromCartHandler.bind(null, id)}>−</button>
-        <button onClick={addItemToCartHandler.bind(null, props.item)}>+</button>
+        {/* <button onClick={addItemToCartHandler.bind(null, props.item)}>+</button> */}
       </div>
     </m.li>
   );

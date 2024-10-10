@@ -3,7 +3,6 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 // My imports.
 import prisma from "../../../utils/db/prisma";
-import validateCredentials from "../../../utils/db/validate-credentials";
 import {
   validateRequestId,
   validatePassword,
@@ -204,3 +203,7 @@ export default async function handler(
     return;
   }
 }
+function validateCredentials(userEmail: string, enteredPassword: string): any {
+  throw new Error("Function not implemented.");
+}
+

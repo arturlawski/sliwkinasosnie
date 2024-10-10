@@ -1,7 +1,7 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 // My imports.
-import validateCredentials from "../../../utils/db/validate-credentials";
+// import validateCredentials from "../../../utils/db/validate-credentials";
 
 export const authOptions: NextAuthOptions = {
   session: {
@@ -60,3 +60,7 @@ export const authOptions: NextAuthOptions = {
 
 // Handles all other auth routes.
 export default NextAuth(authOptions);
+function validateCredentials(email: string, password: string): any {
+  throw new Error("Function not implemented.");
+}
+
