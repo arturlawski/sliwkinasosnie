@@ -33,7 +33,7 @@ export default function FetchItems<T>(
 
   return {
     items: arr,
-    isLoading: !error && !data, // There is no error and data is still being fetched.
+    isLoading: false, // There is no error and data is still being fetched.
     isError: error,
   };
 }
