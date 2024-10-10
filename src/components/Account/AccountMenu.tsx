@@ -23,7 +23,7 @@ type UserProfileProps = {
 export default function UserProfile(props: UserProfileProps) {
   const [viewSettings, setViewSettings] = useState(false);
   const [showPastOrders, setShowPastOrders] = useState(false);
-  const user = props.session.user;
+  // const user = props.session.user;
 
   const toggleShowPastOrdersHandler = () => {
     setShowPastOrders((prevState) => !prevState);
@@ -41,7 +41,7 @@ export default function UserProfile(props: UserProfileProps) {
     <m.div initial="in" animate="animate" variants={pageAnimation}>
       <Card style="container">
         <section className={styles.profile}>
-          <h1>{user.name}</h1>
+          <h1>{"user.name"}</h1>
           {!viewSettings && (
             <>
               <button
