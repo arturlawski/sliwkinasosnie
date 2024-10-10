@@ -50,7 +50,7 @@ export default function DeleteAccountMenu(props: Props) {
       : "";
 
     try {
-      const result = await deleteAccount(enteredCurrentPassword, user.id);
+      const result = await deleteAccount(enteredCurrentPassword, "user.id");
       setStatusMessage(result.message);
       setSuccessfulDeletion(true);
       setInvalidPassword(false);

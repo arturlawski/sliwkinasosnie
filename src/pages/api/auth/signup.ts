@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 // My imports.
 import type RegisteredUser from "../../../models/RegisteredUser";
 import { SafeParseReturnType } from "zod";
-import { validateRegisteredUserData } from "../../../utils/db/input-validation";
+// import { validateRegisteredUserData } from "../../../utils/db/input-validation";
 import { hashPassword } from "../../../utils/auth/auth";
 import prisma from "../../../utils/db/prisma";
 
@@ -13,19 +13,19 @@ export default async function handler(
   if (req.method === "POST") {
     const userInfo: RegisteredUser = req.body;
 
-    // Backend Validation: Validate user input.
-    const registeredUserValidation: SafeParseReturnType<
-      RegisteredUser,
-      RegisteredUser
-    > = validateRegisteredUserData(userInfo);
-    if (!registeredUserValidation.success) {
-      res.status(422).json({
-        message: registeredUserValidation.error.issues
-          .map((issue) => issue.path + ": " + issue.message)
-          .join(" "),
-      });
-      return;
-    }
+    // // Backend Validation: Validate user input.
+    // const registeredUserValidation: SafeParseReturnType<
+    //   RegisteredUser,
+    //   RegisteredUser
+    // > = userInfo;
+    // if (!registeredUserValidation.success) {
+    //   res.status(422).json({
+    //     message: registeredUserValidation.error.issues
+    //       .map((issue) => issue.path + ": " + issue.message)
+    //       .join(" "),
+    //   });
+    //   return;
+    // }
 
     // Check if user already exists.
     const userExists = await prisma.user.findUnique({

@@ -14,12 +14,12 @@ type RegisteredCheckoutProps = {
 
 export default function RegisteredCheckout(props: RegisteredCheckoutProps) {
   // If there is a register user about to checkout.
-  const fullName = props.session.user.name;
+  const fullName = "props.session.user.name";
   const nameDividerPos = fullName.indexOf(" ");
 
   const firstName = fullName.slice(0, nameDividerPos);
   const lastName = fullName.slice(nameDividerPos);
-  const email = props.session.user.email;
+  const email = "props.session.user.email";
 
   const confirmHandler = (event: React.FormEvent) => {
     event.preventDefault();

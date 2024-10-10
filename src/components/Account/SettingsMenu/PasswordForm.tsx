@@ -67,7 +67,7 @@ export default function PasswordForm(props: PasswordFormProps) {
         const result = await changePassword(
           enteredCurrentPassword,
           enteredNewPassword,
-          props.session.user.id
+          "props.session.user.id"
         );
         setStatusMessage(result.message);
         formRef.current?.reset();
@@ -99,7 +99,7 @@ export default function PasswordForm(props: PasswordFormProps) {
           <input
             type="text"
             id="username"
-            value={props.session.user.email}
+            value={"props.session.user.email"}
             readOnly
             autoComplete="username"
           />

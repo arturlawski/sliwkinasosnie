@@ -41,7 +41,7 @@ export default async function handler(
     try {
       userDB = await prisma.user.findUnique({
         where: {
-          email: user.email,
+          email: "user.email",
         },
       });
     } catch (error) {
@@ -89,8 +89,8 @@ export default async function handler(
 
     // Create Receipt Object.
     const receipt: Receipt = {
-      name: user.firstName + user.lastName,
-      email: user.email,
+      name: "user.firstName + user.lastName",
+      email: "user.email",
       items: [],
       totalItems: 0,
       totalPrice: 0,

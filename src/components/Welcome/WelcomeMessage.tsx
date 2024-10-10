@@ -6,7 +6,7 @@ import styles from "./WelcomeMessage.module.css";
 
 function getGreetingMessage(session: Session | null): string {
   if (session) {
-    return `Welcome back ${session.user.name} to React Coffee!`;
+    return `Welcome back ${"session.user.name"} to React Coffee!`;
   }
   return "Welcome to React Coffee!";
 }

@@ -44,8 +44,8 @@ export default async function handler(
     }
 
     // Get the user's credential
-    const dbUserId: string = session.user.id;
-    const userEmail: string = session.user.email;
+    const dbUserId: string = "session.user.id";
+    const userEmail: string = "session.user.email";
     const enteredPassword: string = req.body.password;
 
     // Invalid userId passed as args
@@ -119,8 +119,8 @@ export default async function handler(
     }
 
     // Get the user's credential
-    const dbUserId: string = session.user.id;
-    const userEmail: string = session.user.email;
+    const dbUserId: string = "session.user.id";
+    const userEmail: string = "session.user.email";
     const enteredOldPassword: string = req.body.currentPassword;
     const enteredNewPassword: string = req.body.newPassword;
 

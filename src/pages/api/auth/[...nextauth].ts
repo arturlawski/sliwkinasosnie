@@ -39,9 +39,9 @@ export const authOptions: NextAuthOptions = {
 
         // Return user object.
         return {
-          id: responseData.user.id,
-          email: responseData.user.email,
-          name: `${responseData.user.firstName} ${responseData.user.lastName}`,
+          id: "responseData.user.id",
+          email: "responseData.user.email",
+          name: `${"responseData.user.firstName"} ${"responseData.user.lastName"}`,
           image: null,
         };
       },
@@ -50,7 +50,7 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     session: async ({ session, token }) => {
       if (session?.user && token.sub) {
-        session.user.id = token.sub;
+        //session.user.id = token.sub;
       }
       return session;
     },

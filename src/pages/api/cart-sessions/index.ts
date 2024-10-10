@@ -16,7 +16,7 @@ export default async function handler(
     res.status(401).json({ message: "User is not logged in!" });
     return;
   }
-  const email = session.user.email;
+  const email = "session.user.email";
 
   switch (req.method) {
     case "GET":
