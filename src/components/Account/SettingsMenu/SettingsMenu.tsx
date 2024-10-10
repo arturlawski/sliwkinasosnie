@@ -5,7 +5,7 @@ import { useState } from "react";
 import styles from "./SettingsMenu.module.css";
 // My components.
 import MenuTitle from "./MenuTitle";
-import LoadingSpinner from "components/UI/LoadingSpinner";
+import LoadingSpinner from "src/components/UI/LoadingSpinner";
 const PasswordForm = dynamic(() => import("./PasswordForm"), {
   loading: () => <LoadingSpinner />,
 });

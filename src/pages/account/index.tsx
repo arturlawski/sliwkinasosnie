@@ -6,8 +6,8 @@ import { useRouter } from "next/router";
 // My imports.
 import styles from "./AccountPage.module.css";
 import coffeeLove from "../../public/background/coffeeLove.jpg";
+import LoadingSpinner from "src/components/UI/LoadingSpinner";
 // My components.
-import LoadingSpinner from "components/UI/LoadingSpinner";
 const AccountMenu = dynamic(
   () => import("../../components/Account/AccountMenu"),
   { loading: () => <LoadingSpinner /> }

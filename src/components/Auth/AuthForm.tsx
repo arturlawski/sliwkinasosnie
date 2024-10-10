@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 // My imports.
 import styles from "./AuthForm.module.css";
-import LoadingSpinner from "components/UI/LoadingSpinner";
+import LoadingSpinner from "../UI/LoadingSpinner";
 // My dynamic imports.
 const SignIn = dynamic(() => import("./SignIn"), {
   ssr: false,
