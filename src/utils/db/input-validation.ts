@@ -1,4 +1,4 @@
-import RegisteredUser from "models/RegisteredUser";
+// import RegisteredUser from "models/RegisteredUser";
 import User from "../../models/User";
 import { z } from "zod";
 
@@ -63,20 +63,20 @@ export function validateUserData(
 /**
  * Validates Registered user data.
  */
-export function validateRegisteredUserData(
-  userData: RegisteredUser
-): z.SafeParseReturnType<RegisteredUser, RegisteredUser> {
-  const UserSchema = z.object({
-    email: z.string().trim().email("Invalid email entered."),
-    firstName: z.string().trim().nonempty("Invalid name entered."),
-    lastName: z.string().trim().nonempty("Invalid name entered"),
-    password: z
-      .string({ invalid_type_error: "Password must be a string." })
-      .min(7, "Password must be greater than or equal to 7 characters."),
-  });
+// export function validateRegisteredUserData(
+//   userData: RegisteredUser
+// ): z.SafeParseReturnType<RegisteredUser, RegisteredUser> {
+//   const UserSchema = z.object({
+//     email: z.string().trim().email("Invalid email entered."),
+//     firstName: z.string().trim().nonempty("Invalid name entered."),
+//     lastName: z.string().trim().nonempty("Invalid name entered"),
+//     password: z
+//       .string({ invalid_type_error: "Password must be a string." })
+//       .min(7, "Password must be greater than or equal to 7 characters."),
+//   });
 
-  return UserSchema.safeParse(userData);
-}
+//   return UserSchema.safeParse(userData);
+// }
 
 export function validateRequestId(
   userId: string

@@ -2,13 +2,13 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 // My imports.
-import getDrinksFromServer from "utils/db/db-drinks-util";
 import type Cart from "../../../models/Cart";
 import type Receipt from "../../../models/Receipt";
 import { SafeParseReturnType } from "zod";
 import prisma from "../../../utils/db/prisma";
 import User from "../../../models/User";
 import { validateUserData } from "../../../utils/db/input-validation";
+import getDrinksFromServer from "src/utils/db/db-drinks-util";
 
 export default async function handler(
   req: NextApiRequest,
@@ -62,7 +62,7 @@ export default async function handler(
       }
     } else {
       // Make sure the email is from the user's session.
-      user.email = session.user.email;
+      //user.email = session.user.email;
     }
 
     // Verify Cart items.
@@ -147,7 +147,8 @@ export default async function handler(
       res.status(401).json({ message: "User is not logged in." });
       return;
     }
-    const email = session.user.email;
+
+    const email = "session.user.email";
 
     // Get past orders.
     let pastOrders;
