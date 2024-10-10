@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 // My import.
 import prisma from "../../../utils/db/prisma";
-import type Drink from "../../../models/Drink";
+import Drink from "src/models/Drink";
 
 export default async function handler(
   req: NextApiRequest,
@@ -20,7 +20,7 @@ export default async function handler(
       return;
     }
     // Transform the list fetch from our database to an array we will used to display the available drinks.
-    const drinksListTransformed: Drink[] = drinks.map(drink => {
+    const drinksListTransformed: Drink[] = drinks.map((drink: { id: any; name: any; ounces: any; description: any; price: any; imgSrc: any; originalSource: any; }) => {
       return {
         id: drink.id,
         name: drink.name,
